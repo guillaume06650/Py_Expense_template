@@ -39,8 +39,10 @@ def new_expense(*args):
     spender = prompt(main_option)
 
     names.append("Done")
+    names.remove(spender['main_options'])
     people_involved['choices'] = names
     involved_user = []
+    spender['main_options']
     while True:
         user = prompt(people_involved)
         if (user['people_involved']) == "Done":
@@ -51,12 +53,7 @@ def new_expense(*args):
 
         involved_user.append(selected_user)
 
-
-
     amount = float(infos['amount'])
-    if(len(involved_user) == 0):
-        print("No user selected !")
-        return False
 
     with open('event.csv', 'a', newline='') as f_object:
         writer_object = writer(f_object)
